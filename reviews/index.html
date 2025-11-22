@@ -121,10 +121,36 @@
         }
 
     }
+
+    /* Base hidden state */
+    .animate {
+        opacity: 0;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Desktop animations */
+    .from-left  { transform: translateX(-80px); }
+    .from-right { transform: translateX(80px); }
+    .from-bottom { transform: translateY(80px); }
+
+    /* Final visible state */
+    .show {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+
+    /* MOBILE OVERRIDE — max-width 800px */
+    @media (max-width: 800px) {
+        .from-left,
+        .from-right {
+            transform: translateY(80px);   /* Override to bottom */
+        }
+    }
+
 </style>
 
 <body>
-    <div class="container Game-1">
+    <div class="container Game-1 animate from-left">
         <div class="Game-image"></div>
         <div class="Rating">
             <h1>RV There Yet</h1>
@@ -152,7 +178,7 @@
         </div>
     </div>
     
-    <div class="container Game-2">
+    <div class="container Game-2 animate from-right">
         <div class="Game-image"></div>
         <div class="Rating">
             <h1>Hollow Night</h1>
@@ -180,7 +206,7 @@
         </div>
     </div>
     
-    <div class="container Game-3">
+    <div class="container Game-3 animate from-left">
         <div class="Game-image"></div>
         <div class="Rating">
             <h1>Factorio</h1>
@@ -207,5 +233,20 @@
             </p>  
         </div>
     </div>
+    <script>
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
