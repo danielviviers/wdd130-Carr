@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteamPoweredCarr | Reviews</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    @font-face {
+        font-family: "Rocket Thunder";
+        src: url("../fonts/Rocket\ Thunder\ Script.ttf");
+    }
+    @font-face {
+        font-family: "BaruSansDemo";
+        src: url("../fonts/BaruSansDemo-Medium.ttf");
+    }
+
+    :root {
+        --primary:   #555879;
+        --secondary: #98A1BC;
+        --accent1:   #DED3C4;
+        --accent2:   #F4EBD3;
+
+        --text: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        color: var(--text);
+        background: var(--secondary);
+    }
+    .fa-star{
+        color: var(--secondary);
+    }
+    
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+
+        min-height: 600px;
+        margin: 20px;
+
+        background-color: var(--primary);
+    }
+
+    .Game-image {
+        grid-area: 1 / 1 / 3 / 5; 
+        background-position: center;
+        background-size: cover;
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+    
+    .Game-1 .Game-image {
+        background-image: url(./assets/RV-There-Yet.jpg);
+    }
+    
+    .Game-2 .Game-image {
+        background-image: url(./assets/hollow-night.jpg);
+    }
+    
+    /* Reverse layout for Game-2 on desktop */
+    .Game-1 .Game-image, .Game-3 .Game-image {
+        grid-area: 1 / 2 / 3 / 6;  /* move image to right side */
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+
+    .Game-1 .Rating, .Game-3 .Rating {
+        grid-area: 1 / 1 / 3 / 3;  /* move text to left side */
+    }
+
+
+    .Game-3 .Game-image {
+        background-image: url(./assets/Factorio.png);
+    }
+
+    .Rating {
+        grid-area: 1 / 4 / 3 / 6;
+        z-index: 1;
+        font-size: x-large;
+        padding: 10px;
+    }
+
+    .Rating > p {
+        margin: 0;
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    h1{
+        font-family: "Rocket Thunder", sans-serif;
+    }
+    p, .text-rating, h3 {
+        font-family: "BaruSansDemo", sans-serif;
+    }
+    p > span {
+        font-family:  sans-serif;
+    }
+    p{
+        font-size: large;
+    }
+
+    @media (max-width: 800px) {
+        .container {
+            grid-template-columns: repeat(5, 1fr) !important;
+            grid-template-rows: 1fr auto auto !important;
+        }
+        
+        .Game-image {
+            grid-area: 1 / 1 / 3 / 6 !important;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 80%) !important;
+        }
+        .Rating {
+            grid-area: 2 / 1 / 4 / 6 !important;
+        }
+
+    }
+
+    /* Base hidden state */
+    .animate {
+        opacity: 0;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Desktop animations */
+    .from-left  { transform: translateX(-80px); }
+    .from-right { transform: translateX(80px); }
+    .from-bottom { transform: translateY(80px); }
+
+    /* Final visible state */
+    .show {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+
+    /* MOBILE OVERRIDE — max-width 800px */
+    @media (max-width: 800px) {
+        .from-left,
+        .from-right {
+            transform: translateY(80px);   /* Override to bottom */
+        }
+    }
+
+</style>
+
+<body>
+    <div class="container Game-1 animate from-left">
+        <div class="Game-image"></div>
+        <div class="Rating">
+            <h1>RV There Yet</h1>
+            
+            <div class="text-rating">7/10</div>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <p>
+                This game offers a lighthearted road trip experience with charming visuals and simple mechanics<span>.</span> I enjoyed the relaxed pacing and the small surprises that appear during travel<span>.</span> The humor and art style create a friendly atmosphere that feels fun and easy to return to<span>.</span> Some sections feel repetitive, and a few interactions could use more depth, but the overall experience is enjoyable<span>.</span> I would recommend this game to players who want something calm and creative<span>.</span>
+            </p>
+            <h3>Community Rating</h3>
+            <p>
+                Most players enjoy its charm and casual style<span>.</span>
+            </p>  
+        </div>
+    </div>
+    
+    <div class="container Game-2 animate from-right">
+        <div class="Game-image"></div>
+        <div class="Rating">
+            <h1>Hollow Night</h1>
+            
+            <div class="text-rating">10/10</div>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <p>
+                This game delivers an impressive combination of fast movement, tight combat, emotional music, and a huge world full of secrets<span>.</span> I enjoyed the feeling of discovery and the sense of achievement that comes from mastering new areas<span>.</span> The world design and atmosphere are some of the strongest I have seen in any game<span>.</span> The difficulty can feel intense for new players, but the challenge makes progress very satisfying<span>.</span> I highly recommend this game to anyone who enjoys exploration and skill based gameplay<span>.</span>
+            </p>
+            <h3>Community Rating</h3>
+            <p>
+                Steam players consistently rate this game very highly, praising its quality and depth<span>.</span>
+            </p>  
+        </div>
+    </div>
+    
+    <div class="container Game-3 animate from-left">
+        <div class="Game-image"></div>
+        <div class="Rating">
+            <h1>Factorio</h1>
+            
+            <div class="text-rating">9/10</div>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <p>
+                Factorio rewards problem solving, planning, and creativity<span>.</span> Building efficient factories feels both relaxing and exciting, and every upgrade brings a new challenge<span>.</span> I enjoyed the constant feeling of progress and the satisfaction of watching everything work together<span>.</span> The game can feel overwhelming at first, but the learning process becomes very rewarding as you improve<span>.</span> I recommend this game to players who enjoy strategy, automation, or long term projects that grow larger over time<span>.</span>
+            </p>
+            <h3>Community Rating</h3>
+            <p>
+                Players praise its depth and replay value<span>.</span>
+            </p>  
+        </div>
+    </div>
+    <script>
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
