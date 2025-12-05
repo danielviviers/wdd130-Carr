@@ -39,7 +39,82 @@ HOME PAGE STYLING
 */
 
 .logo {
-    
+    flex: 0 0 auto;
+    margin-left: 0rem;
+}
+
+.logo img {
+    width: 150px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    flex: 1;
+}
+nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    min-height: 60px;
+    font-size: 20px;
+    font-family: "BaruSansDemo";
+    color: #555879;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 5rem;
+    padding: 0;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color: #F4EBD3;
+    padding: 1rem 1 rem;
+    border: 2px solid transparent; 
+    border: 2px solid #555879;
+
+
+}
+
+#title {
+    text-align: center;
+    font-size: 70px;
+    color: #F4EBD3;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.page {
+    text-align: center;
+}
+
+#steamprofile {
+    width: 700px;
+    justify-content:center;
+}
+
+#badges {
+    width: 700px;
+}
+
+footer  {
+    text-align: center;
+}
+footer p {
+    font-size: 10px;
+    color: #555879;
 }
 
 
