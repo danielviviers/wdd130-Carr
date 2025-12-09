@@ -38,23 +38,28 @@ HOME PAGE STYLING
 
 */
 
-.logo {
-    flex: 0 0 auto;
-    margin-left: 0rem;
+#wrapper {
+    max-width: 900px;
+    margin: 0 auto;
 }
-
+.logo {
+    position: static;
+}
 .logo img {
-    width: 150px;
+    width: 170px;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    height: 100px;
+    margin: 2rem 0;
 }
 
 nav {
-    flex: 1;
+    text-align: center;
 }
 nav a {
     display: flex;
@@ -74,16 +79,14 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 5rem;
+    gap: 7rem;
     padding: 0;
 }
 
 nav a:hover{
     text-decoration: none;
     color: #F4EBD3;
-    padding: 1rem 1 rem;
-    border: 2px solid transparent; 
-    border: 2px solid #555879;
+    border-color: #555879;
 
 
 }
@@ -99,14 +102,19 @@ nav a:hover{
 .page {
     text-align: center;
 }
+.page p {
+    max-width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
 
 #steamprofile {
-    width: 700px;
+    width: 100%;
     justify-content:center;
 }
 
 #badges {
-    width: 700px;
+    width: 100%;
 }
 
 footer  {
